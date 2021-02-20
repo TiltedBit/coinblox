@@ -1,5 +1,4 @@
 local part = script.Parent;
-local ServerStorage = game:GetService("ServerStorage")
 
 print("Jump script on " .. part.Name);
 
@@ -15,4 +14,4 @@ function onTouched (otherPart)
     end
 end
 
-part.Touched:connect(onTouched)
+part.Touched:connect(onTouched); 
