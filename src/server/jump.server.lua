@@ -1,3 +1,4 @@
+local Promise = require(game.ReplicatedStorage.Common.Promise)
 local part = script.Parent;
 
 print("Jump script on " .. part.Name);
@@ -11,6 +12,10 @@ function onTouched (otherPart)
         humanoid.JumpPower = humanoid.JumpPower * 2;
         part:Destroy();
         script:Destroy();
+
+        Promise.delay(10):andThen(function ()
+            humanoid.JumpPower = humanoid.JumpPower / 2;
+        end)
     end
 end
 
